@@ -1,0 +1,20 @@
+[package]
+authors = ["@s_persianov"]
+homepage = "https://persianov.net/"
+name = "rusty-vm"
+version = "0.0.15"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[profile.release]
+opt-level = "z"
+debug = 0
+strip = true
+debug-assertions = false
+# overflow-checks = false
+lto = "thin"
+panic = "abort"
+codegen-units = 1
